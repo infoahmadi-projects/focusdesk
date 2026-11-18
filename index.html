@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FocusDesk is a responsive productivity workspace for managing tasks and playing local audio and video files.">
+  <meta name="author" content="infoahmadi-projects">
+  <meta name="theme-color" content="#176b58">
+  <title>FocusDesk | Planner & Media Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="FocusDesk home"><span class="brand-mark">F</span> FocusDesk</a>
+    <span class="topbar-note">Personal productivity workspace</span>
+  </header>
+
+  <main class="layout">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">WORKSPACE</p>
+        <h1>Plan clearly.<br><span>Make progress.</span></h1>
+        <p class="hero-copy">Organise your projects and enjoy your own media in one calm workspace.</p>
+      </div>
+      <div class="hero-stat"><strong id="task-count">0</strong><span>open tasks</span></div>
+    </section>
+
+    <section class="panel planner-panel" aria-labelledby="planner-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / ORGANISE</p><h2 id="planner-heading">Project planner</h2></div>
+        <span class="pill">Saved in this browser</span>
+      </div>
+
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-title">Task title</label>
+        <input id="task-title" name="title" maxlength="90" placeholder="What needs to be done?" required>
+        <label class="sr-only" for="task-project">Project name</label>
+        <input id="task-project" name="project" maxlength="50" placeholder="Project name">
+        <label class="sr-only" for="task-due">Due date</label>
+        <input id="task-due" name="due" type="date" aria-label="Due date">
+        <button class="button button-primary" type="submit">Add task</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="open" type="button">Open</button>
+          <button class="filter" data-filter="done" type="button">Completed</button>
+        </div>
+        <span id="task-summary" class="muted">No tasks yet</span>
+      </div>
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      <p id="empty-state" class="empty-state">Your task list is clear. Add your first task above.</p>
+    </section>
+
+    <section class="panel media-panel" aria-labelledby="media-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">02 / UNWIND</p><h2 id="media-heading">Media studio</h2></div>
+        <span class="pill">Local files only</span>
+      </div>
+      <div class="media-grid">
+        <div class="media-card">
+          <div class="media-icon" aria-hidden="true">♫</div>
+          <h3>Music player</h3>
+          <p>Select an audio file from your device.</p>
+          <label class="button button-secondary file-button">Choose audio
+            <input id="audio-file" type="file" accept="audio/*">
+          </label>
+          <audio id="audio-player" controls preload="metadata"></audio>
+          <p id="audio-name" class="file-name">No audio selected</p>
+        </div>
+        <div class="media-card">
+          <div class="media-icon" aria-hidden="true">▶</div>
+          <h3>Video player</h3>
+          <p>Select a video file from your device.</p>
+          <label class="button button-secondary file-button">Choose video
+            <input id="video-file" type="file" accept="video/*">
+          </label>
+          <video id="video-player" controls preload="metadata"></video>
+          <p id="video-name" class="file-name">No video selected</p>
+        </div>
+      </div>
+      <p class="privacy-note">Your selected media stays on your device; this demo does not upload files.</p>
+    </section>
+    <footer>FocusDesk · Built with HTML, CSS and JavaScript · <a href="https://github.com/infoahmadi-projects" target="_blank" rel="noopener noreferrer">GitHub: infoahmadi-projects</a></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
