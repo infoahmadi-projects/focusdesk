@@ -113,7 +113,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 
-**infoahmadi-projects**
+**ALI HOSSEIN AHMADI**
 
 - GitHub: https://github.com/infoahmadi-projects
 
